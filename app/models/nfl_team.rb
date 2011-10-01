@@ -8,6 +8,10 @@ class NflTeam < ActiveRecord::Base
     division enum_string(:AFC_North, :AFC_South, :AFC_East, :AFC_West, :NFC_North, :NFC_South, :NFC_East, :NFC_West)
     timestamps
   end
+  
+  belongs_to :sport
+  
+  validates_presence_of :sport
 
   # --- Permissions --- #
 

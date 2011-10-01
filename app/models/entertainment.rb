@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class Entertainment < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
@@ -7,9 +7,7 @@ class Category < ActiveRecord::Base
     timestamps
   end
   
-  has_many :sports
-  has_many :politics
-  has_many :entertainments
+  belongs_to :category
 
   # --- Permissions --- #
 

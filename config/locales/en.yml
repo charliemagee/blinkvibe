@@ -6,5 +6,9 @@ en:
 
 
 en:
-  nfl_team:
-    nav_item: "NFL Teams"
+  Nflteam:
+    nav_item: "NFL"
+    
+en:
+  entertainment:
+    nav_item: "Entertainment"

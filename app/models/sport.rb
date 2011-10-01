@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class Sport < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
@@ -6,10 +6,9 @@ class Category < ActiveRecord::Base
     title :string
     timestamps
   end
-  
-  has_many :sports
-  has_many :politics
-  has_many :entertainments
+
+  belongs_to :category
+  has_many :nfl_team
 
   # --- Permissions --- #
 

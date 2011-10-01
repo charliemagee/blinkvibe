@@ -46,4 +46,34 @@ Testme::Application.routes.draw do
   get 'logout(.:format)' => 'users#logout', :as => 'user_logout'
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
+
+  # Resource routes for controller "sports"
+  get 'sports(.:format)' => 'sports#index', :as => 'sports'
+  get 'sports/new(.:format)', :as => 'new_sport'
+  get 'sports/:id/edit(.:format)' => 'sports#edit', :as => 'edit_sport'
+  get 'sports/:id(.:format)' => 'sports#show', :as => 'sport', :constraints => { :id => %r([^/.?]+) }
+  post 'sports(.:format)' => 'sports#create', :as => 'create_sport'
+  put 'sports/:id(.:format)' => 'sports#update', :as => 'update_sport', :constraints => { :id => %r([^/.?]+) }
+  delete 'sports/:id(.:format)' => 'sports#destroy', :as => 'destroy_sport', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "politics"
+  get 'politics(.:format)' => 'politics#index', :as => 'politics'
+  get 'politics/new(.:format)', :as => 'new_politic'
+  get 'politics/:id/edit(.:format)' => 'politics#edit', :as => 'edit_politic'
+  get 'politics/:id(.:format)' => 'politics#show', :as => 'politic', :constraints => { :id => %r([^/.?]+) }
+  post 'politics(.:format)' => 'politics#create', :as => 'create_politic'
+  put 'politics/:id(.:format)' => 'politics#update', :as => 'update_politic', :constraints => { :id => %r([^/.?]+) }
+  delete 'politics/:id(.:format)' => 'politics#destroy', :as => 'destroy_politic', :constraints => { :id => %r([^/.?]+) }
+
+
+  # Resource routes for controller "entertainments"
+  get 'entertainments(.:format)' => 'entertainments#index', :as => 'entertainments'
+  get 'entertainments/new(.:format)', :as => 'new_entertainment'
+  get 'entertainments/:id/edit(.:format)' => 'entertainments#edit', :as => 'edit_entertainment'
+  get 'entertainments/:id(.:format)' => 'entertainments#show', :as => 'entertainment', :constraints => { :id => %r([^/.?]+) }
+  post 'entertainments(.:format)' => 'entertainments#create', :as => 'create_entertainment'
+  put 'entertainments/:id(.:format)' => 'entertainments#update', :as => 'update_entertainment', :constraints => { :id => %r([^/.?]+) }
+  delete 'entertainments/:id(.:format)' => 'entertainments#destroy', :as => 'destroy_entertainment', :constraints => { :id => %r([^/.?]+) }
+
 end

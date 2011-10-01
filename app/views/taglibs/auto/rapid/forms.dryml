@@ -12,12 +12,48 @@
 
 
 
+<def tag="form" for="Entertainment">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="title, category" param/>
+    <div param="actions">
+      <submit label="#{ht 'entertainment.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
 <def tag="form" for="NflTeam">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, url, division" param/>
+    <field-list fields="name, url, division, sport" param/>
     <div param="actions">
       <submit label="#{ht 'nfl_team.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Politic">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="title, category" param/>
+    <div param="actions">
+      <submit label="#{ht 'politic.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+    </div>
+  </form>
+</def>
+
+
+
+<def tag="form" for="Sport">
+  <form merge param="default">
+    <error-messages param/>
+    <field-list fields="title, category" param/>
+    <div param="actions">
+      <submit label="#{ht 'sport.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
