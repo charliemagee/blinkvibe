@@ -7,8 +7,6 @@ class Sport < ActiveRecord::Base
     timestamps
   end
 
-  belongs_to :category
-  has_many :nfl_team
 
   # --- Permissions --- #
 

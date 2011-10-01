@@ -7,7 +7,6 @@ class Entertainment < ActiveRecord::Base
     timestamps
   end
   
-  belongs_to :category
 
   # --- Permissions --- #
 

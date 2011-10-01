@@ -7,8 +7,6 @@ class Politic < ActiveRecord::Base
     timestamps
   end
   
-  belongs_to :category
-  has_many :offices
 
   # --- Permissions --- #
 
