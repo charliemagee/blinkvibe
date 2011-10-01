@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111001040453) do
+ActiveRecord::Schema.define(:version => 20111001045338) do
 
   create_table "categories", :force => true do |t|
     t.string   "title"
@@ -22,10 +22,7 @@ ActiveRecord::Schema.define(:version => 20111001040453) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
-
-  add_index "entertainments", ["category_id"], :name => "index_entertainments_on_category_id"
 
   create_table "nfl_teams", :force => true do |t|
     t.string   "name"
@@ -42,19 +39,13 @@ ActiveRecord::Schema.define(:version => 20111001040453) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
-
-  add_index "politics", ["category_id"], :name => "index_politics_on_category_id"
 
   create_table "sports", :force => true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
-
-  add_index "sports", ["category_id"], :name => "index_sports_on_category_id"
 
   create_table "users", :force => true do |t|
     t.string   "crypted_password",          :limit => 40

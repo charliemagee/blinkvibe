@@ -15,7 +15,7 @@
 <def tag="form" for="Entertainment">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title, category" param/>
+    <field-list fields="title" param/>
     <div param="actions">
       <submit label="#{ht 'entertainment.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -39,7 +39,7 @@
 <def tag="form" for="Politic">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title, category" param/>
+    <field-list fields="title" param/>
     <div param="actions">
       <submit label="#{ht 'politic.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
@@ -51,7 +51,7 @@
 <def tag="form" for="Sport">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title, category" param/>
+    <field-list fields="title" param/>
     <div param="actions">
       <submit label="#{ht 'sport.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>

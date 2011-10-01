@@ -220,7 +220,6 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="category" param/>
           </section>
     </content:>
 
@@ -460,7 +459,6 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="category" param/>
           </section>
     </content:>
 
@@ -580,7 +578,6 @@
           </header>
 
           <section param="content-body">
-            <field-list fields="category" param/>
           </section>
     </content:>
 
