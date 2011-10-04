@@ -5,10 +5,22 @@ en:
   hello: "Hello world"
 
 
-en:
-  Nflteam:
-    nav_item: "NFL"
-    
-en:
-  entertainment:
-    nav_item: "Entertainment"
+
+  nfl_game:
+    nav_item: "NFL Games"
+  nfl_team:
+    nav_item: "NFL Teams"
+  nfl_cal:
+    nav_item: "NFL Calendar"
+
+  activerecord:
+    models:
+      nfl_team:
+        one: NFL Team
+        other: NFL Teams
+      nfl_game:
+        one: NFL Game
+        other: NFL Games
+      nfl_cal:
+        one: NFL Gameday
+        other: NFL Gamedays

@@ -1,12 +1,13 @@
-class Politic < ActiveRecord::Base
+class TeamAssignment < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    title :string
     timestamps
   end
   
+  belongs_to :nfl_team
+  belongs_to :nfl_game
 
   # --- Permissions --- #
 

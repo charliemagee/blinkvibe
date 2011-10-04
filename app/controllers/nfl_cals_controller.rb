@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class NflCalsController < ApplicationController
 
   hobo_model_controller
 

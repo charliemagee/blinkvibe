@@ -1,8 +1,8 @@
-class HoboMigration6 < ActiveRecord::Migration
+class HoboMigration7 < ActiveRecord::Migration
   def self.up
     create_table :nfl_teams do |t|
-      t.string   :name
-      t.string   :url
+      t.string   :team
+      t.string   :team_url
       t.datetime :created_at
       t.datetime :updated_at
     end

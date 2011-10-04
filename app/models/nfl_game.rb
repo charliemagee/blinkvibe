@@ -1,16 +1,17 @@
-class NflTeam < ActiveRecord::Base
+class NflGame < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    name     :string, :required
-    team_url :string, :required
-    division enum_string(:NFC_North, :NFC_South, :NFC_West, :NFC_East, :AFC_North, :AFC_South, :AFC_West, :AFC_East), :required
+    name :string, :required
+    winner     :string
     timestamps
   end
   
-  has_many :nfl_games, :through => :team_assignments
+  has_many :nfl_teams, :through => :team_assignments, :accessible => true
   has_many :team_assignments, :dependent => :destroy
+  has_many :nfl_cals, :through => :nfl_cal_assignments, :accessible => true
+  has_many :nfl_cal_assignments, :dependent => :destroy
 
   # --- Permissions --- #
 

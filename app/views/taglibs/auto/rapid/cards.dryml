@@ -1,15 +1,23 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
-<def tag="card" for="Category">
-  <card class="category" param="default" merge>
+<def tag="card" for="NflCal">
+  <card class="nfl-cal" param="default" merge>
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
     </header:>
   </card>
 </def>
 
-<def tag="card" for="Entertainment">
-  <card class="entertainment" param="default" merge>
+<def tag="card" for="NflCalAssignment">
+  <card class="nfl-cal-assignment" param="default" merge>
+    <header: param>
+      <h4 param="heading"><name/></h4>
+    </header:>
+  </card>
+</def>
+
+<def tag="card" for="NflGame">
+  <card class="nfl-game" param="default" merge>
     <header: param>
       <h4 param="heading"><a><name/></a></h4>
     </header:>
@@ -24,18 +32,10 @@
   </card>
 </def>
 
-<def tag="card" for="Politic">
-  <card class="politic" param="default" merge>
+<def tag="card" for="TeamAssignment">
+  <card class="team-assignment" param="default" merge>
     <header: param>
-      <h4 param="heading"><a><name/></a></h4>
-    </header:>
-  </card>
-</def>
-
-<def tag="card" for="Sport">
-  <card class="sport" param="default" merge>
-    <header: param>
-      <h4 param="heading"><a><name/></a></h4>
+      <h4 param="heading"><name/></h4>
     </header:>
   </card>
 </def>

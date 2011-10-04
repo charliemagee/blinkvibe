@@ -1,4 +1,4 @@
-class PoliticsController < ApplicationController
+class NflGamesController < ApplicationController
 
   hobo_model_controller
 

@@ -1,15 +1,13 @@
-class Category < ActiveRecord::Base
+class NflCalAssignment < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    title :string
     timestamps
   end
   
-  has_many :sports
-  has_many :politics
-  has_many :entertainments
+  belongs_to :nfl_cal
+  belongs_to :nfl_game
 
   # --- Permissions --- #
 

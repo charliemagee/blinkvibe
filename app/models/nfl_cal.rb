@@ -1,12 +1,12 @@
-class Entertainment < ActiveRecord::Base
+class NflCal < ActiveRecord::Base
 
   hobo_model # Don't put anything above this
 
   fields do
-    title :string
+    name:string
+    gameday :date
     timestamps
   end
-  
 
   # --- Permissions --- #
 

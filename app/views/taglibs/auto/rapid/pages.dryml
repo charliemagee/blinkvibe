@@ -5,33 +5,31 @@
 <def tag="main-nav">
   <navigation class="main-nav" merge-attrs param="default">
     <nav-item href="#{base_url}/">Home</nav-item>
-    <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Entertainment"><ht key="entertainment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&NflCal"><ht key="nfl_cal.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
+    <nav-item with="&NflGame"><ht key="nfl_game.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
     <nav-item with="&NflTeam"><ht key="nfl_team.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Politic"><ht key="politic.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Sport"><ht key="sport.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
   </navigation>
 </def>
 
 
 
 
-<!-- ====== Category Pages ====== -->
+<!-- ====== NflCal Pages ====== -->
 
-<def tag="index-page" for="Category">
-  <page merge title="#{ht 'category.index.title', :default=>[model.model_name.human(:count=>100)] }">
-    <body: class="index-page category" param/>
+<def tag="index-page" for="NflCal">
+  <page merge title="#{ht 'nfl_cal.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page nfl-cal" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
-          <ht key="category.index.heading">
+          <ht key="nfl_cal.index.heading">
             <model-name-human model="&model"/>
           </ht>
         </h2>
 
         <p param="count" if>
-          <ht key="category.collection.count" count="&collection_count">
+          <ht key="nfl_cal.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -39,7 +37,7 @@
 
       <section param="content-body">
         <a action="new" to="&model" param="new-link">
-          <ht key="category.actions.new">New Category</ht>
+          <ht key="nfl_cal.actions.new">New NFL Gameday</ht>
         </a>
 
         <page-nav param="top-page-nav"/>
@@ -55,22 +53,22 @@
 </def>
 
 
-<def tag="new-page" for="Category">
-  <page merge title="#{ht 'category.new.title', :default=>[' New Category'] }">
-    <body: class="new-page category" param/>
+<def tag="new-page" for="NflCal">
+  <page merge title="#{ht 'nfl_cal.new.title', :default=>[' New NFL Gameday'] }">
+    <body: class="new-page nfl-cal" param/>
 
     <content: param>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="category.new.heading">
-            New Category
+          <ht key="nfl_cal.new.heading">
+            New NFL Gameday
           </ht>
         </h2>
       </section>
 
       <section param="content-body">
         <form param>
-          <submit: label="#{ht 'category.actions.create', :default=>['Create Category']}"/>
+          <submit: label="#{ht 'nfl_cal.actions.create', :default=>['Create NFL Gameday']}"/>
         </form>
       </section>
     </content:>
@@ -78,15 +76,15 @@
 </def>
 
 
-<def tag="show-page" for="Category">
-  <page merge title="#{ht 'category.show.title', :default=>['Category'] }">
+<def tag="show-page" for="NflCal">
+  <page merge title="#{ht 'nfl_cal.show.title', :default=>['NFL Gameday'] }">
 
-    <body: class="show-page category" param/>
+    <body: class="show-page nfl-cal" param/>
 
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="category.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+              <ht key="nfl_cal.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
               </ht>
             </h2>
@@ -94,13 +92,14 @@
             <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="category.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Category
+              <ht key="nfl_cal.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit NFL Gameday
               </ht>
             </a>
           </header>
 
           <section param="content-body">
+            <field-list fields="gameday" param/>
           </section>
     </content:>
 
@@ -108,19 +107,19 @@
 </def>
 
 
-<def tag="edit-page" for="Category">
-  <page merge title="#{ht 'category.edit.title', :default=>['Edit Category'] }">
+<def tag="edit-page" for="NflCal">
+  <page merge title="#{ht 'nfl_cal.edit.title', :default=>['Edit NFL Gameday'] }">
 
-    <body: class="edit-page category" param/>
+    <body: class="edit-page nfl-cal" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="category.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
-            Edit Category
+          <ht key="nfl_cal.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit NFL Gameday
           </ht>
         </h2>
-        <delete-button label="#{ht 'category.actions.delete', :default=>['Remove This Category']}" param/>
+        <delete-button label="#{ht 'nfl_cal.actions.delete', :default=>['Remove This NFL Gameday']}" param/>
       </section>
 
       <section param="content-body">
@@ -135,22 +134,22 @@
 
 
 
-<!-- ====== Entertainment Pages ====== -->
+<!-- ====== NflGame Pages ====== -->
 
-<def tag="index-page" for="Entertainment">
-  <page merge title="#{ht 'entertainment.index.title', :default=>[model.model_name.human(:count=>100)] }">
-    <body: class="index-page entertainment" param/>
+<def tag="index-page" for="NflGame">
+  <page merge title="#{ht 'nfl_game.index.title', :default=>[model.model_name.human(:count=>100)] }">
+    <body: class="index-page nfl-game" param/>
 
     <content: param>
       <header param="content-header">
         <h2 param="heading">
-          <ht key="entertainment.index.heading">
+          <ht key="nfl_game.index.heading">
             <model-name-human model="&model"/>
           </ht>
         </h2>
 
         <p param="count" if>
-          <ht key="entertainment.collection.count" count="&collection_count">
+          <ht key="nfl_game.collection.count" count="&collection_count">
             <count summary/>
           </ht>
         </p>
@@ -158,7 +157,7 @@
 
       <section param="content-body">
         <a action="new" to="&model" param="new-link">
-          <ht key="entertainment.actions.new">New Entertainment</ht>
+          <ht key="nfl_game.actions.new">New NFL Game</ht>
         </a>
 
         <page-nav param="top-page-nav"/>
@@ -174,22 +173,22 @@
 </def>
 
 
-<def tag="new-page" for="Entertainment">
-  <page merge title="#{ht 'entertainment.new.title', :default=>[' New Entertainment'] }">
-    <body: class="new-page entertainment" param/>
+<def tag="new-page" for="NflGame">
+  <page merge title="#{ht 'nfl_game.new.title', :default=>[' New NFL Game'] }">
+    <body: class="new-page nfl-game" param/>
 
     <content: param>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="entertainment.new.heading">
-            New Entertainment
+          <ht key="nfl_game.new.heading">
+            New NFL Game
           </ht>
         </h2>
       </section>
 
       <section param="content-body">
         <form param>
-          <submit: label="#{ht 'entertainment.actions.create', :default=>['Create Entertainment']}"/>
+          <submit: label="#{ht 'nfl_game.actions.create', :default=>['Create NFL Game']}"/>
         </form>
       </section>
     </content:>
@@ -197,15 +196,15 @@
 </def>
 
 
-<def tag="show-page" for="Entertainment">
-  <page merge title="#{ht 'entertainment.show.title', :default=>['Entertainment'] }">
+<def tag="show-page" for="NflGame">
+  <page merge title="#{ht 'nfl_game.show.title', :default=>['NFL Game'] }">
 
-    <body: class="show-page entertainment" param/>
+    <body: class="show-page nfl-game" param/>
 
     <content: param>
           <header param="content-header">
             <h2 param="heading">
-              <ht key="entertainment.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+              <ht key="nfl_game.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
                 <name/>
               </ht>
             </h2>
@@ -213,13 +212,14 @@
             <record-flags fields="" param/>
 
             <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="entertainment.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Entertainment
+              <ht key="nfl_game.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit NFL Game
               </ht>
             </a>
           </header>
 
           <section param="content-body">
+            <field-list fields="winner" param/>
           </section>
     </content:>
 
@@ -227,19 +227,19 @@
 </def>
 
 
-<def tag="edit-page" for="Entertainment">
-  <page merge title="#{ht 'entertainment.edit.title', :default=>['Edit Entertainment'] }">
+<def tag="edit-page" for="NflGame">
+  <page merge title="#{ht 'nfl_game.edit.title', :default=>['Edit NFL Game'] }">
 
-    <body: class="edit-page entertainment" param/>
+    <body: class="edit-page nfl-game" param/>
 
     <content:>
       <section param="content-header">
         <h2 param="heading">
-          <ht key="entertainment.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
-            Edit Entertainment
+          <ht key="nfl_game.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
+            Edit NFL Game
           </ht>
         </h2>
-        <delete-button label="#{ht 'entertainment.actions.delete', :default=>['Remove This Entertainment']}" param/>
+        <delete-button label="#{ht 'nfl_game.actions.delete', :default=>['Remove This NFL Game']}" param/>
       </section>
 
       <section param="content-body">
@@ -277,7 +277,7 @@
 
       <section param="content-body">
         <a action="new" to="&model" param="new-link">
-          <ht key="nfl_team.actions.new">New Nfl team</ht>
+          <ht key="nfl_team.actions.new">New NFL Team</ht>
         </a>
 
         <page-nav param="top-page-nav"/>
@@ -294,21 +294,21 @@
 
 
 <def tag="new-page" for="NflTeam">
-  <page merge title="#{ht 'nfl_team.new.title', :default=>[' New Nfl team'] }">
+  <page merge title="#{ht 'nfl_team.new.title', :default=>[' New NFL Team'] }">
     <body: class="new-page nfl-team" param/>
 
     <content: param>
       <section param="content-header">
         <h2 param="heading">
           <ht key="nfl_team.new.heading">
-            New Nfl team
+            New NFL Team
           </ht>
         </h2>
       </section>
 
       <section param="content-body">
         <form param>
-          <submit: label="#{ht 'nfl_team.actions.create', :default=>['Create Nfl team']}"/>
+          <submit: label="#{ht 'nfl_team.actions.create', :default=>['Create NFL Team']}"/>
         </form>
       </section>
     </content:>
@@ -317,7 +317,7 @@
 
 
 <def tag="show-page" for="NflTeam">
-  <page merge title="#{ht 'nfl_team.show.title', :default=>['Nfl team'] }">
+  <page merge title="#{ht 'nfl_team.show.title', :default=>['NFL Team'] }">
 
     <body: class="show-page nfl-team" param/>
 
@@ -333,13 +333,13 @@
 
             <a action="edit" if="&can_edit?" param="edit-link">
               <ht key="nfl_team.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Nfl team
+                Edit NFL Team
               </ht>
             </a>
           </header>
 
           <section param="content-body">
-            <field-list fields="url, division, sport" param/>
+            <field-list fields="team_url, division" param/>
           </section>
     </content:>
 
@@ -348,7 +348,7 @@
 
 
 <def tag="edit-page" for="NflTeam">
-  <page merge title="#{ht 'nfl_team.edit.title', :default=>['Edit Nfl team'] }">
+  <page merge title="#{ht 'nfl_team.edit.title', :default=>['Edit NFL Team'] }">
 
     <body: class="edit-page nfl-team" param/>
 
@@ -356,248 +356,10 @@
       <section param="content-header">
         <h2 param="heading">
           <ht key="nfl_team.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
-            Edit Nfl team
+            Edit NFL Team
           </ht>
         </h2>
-        <delete-button label="#{ht 'nfl_team.actions.delete', :default=>['Remove This Nfl team']}" param/>
-      </section>
-
-      <section param="content-body">
-        <form param/>
-      </section>
-    </content:>
-
-  </page>
-</def>
-
-
-
-
-
-<!-- ====== Politic Pages ====== -->
-
-<def tag="index-page" for="Politic">
-  <page merge title="#{ht 'politic.index.title', :default=>[model.model_name.human(:count=>100)] }">
-    <body: class="index-page politic" param/>
-
-    <content: param>
-      <header param="content-header">
-        <h2 param="heading">
-          <ht key="politic.index.heading">
-            <model-name-human model="&model"/>
-          </ht>
-        </h2>
-
-        <p param="count" if>
-          <ht key="politic.collection.count" count="&collection_count">
-            <count summary/>
-          </ht>
-        </p>
-      </header>
-
-      <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="politic.actions.new">New Politic</ht>
-        </a>
-
-        <page-nav param="top-page-nav"/>
-
-        <collection param/>
-
-        <page-nav param="bottom-page-nav"/>
-
-
-      </section>
-    </content:>
-  </page>
-</def>
-
-
-<def tag="new-page" for="Politic">
-  <page merge title="#{ht 'politic.new.title', :default=>[' New Politic'] }">
-    <body: class="new-page politic" param/>
-
-    <content: param>
-      <section param="content-header">
-        <h2 param="heading">
-          <ht key="politic.new.heading">
-            New Politic
-          </ht>
-        </h2>
-      </section>
-
-      <section param="content-body">
-        <form param>
-          <submit: label="#{ht 'politic.actions.create', :default=>['Create Politic']}"/>
-        </form>
-      </section>
-    </content:>
-  </page>
-</def>
-
-
-<def tag="show-page" for="Politic">
-  <page merge title="#{ht 'politic.show.title', :default=>['Politic'] }">
-
-    <body: class="show-page politic" param/>
-
-    <content: param>
-          <header param="content-header">
-            <h2 param="heading">
-              <ht key="politic.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
-                <name/>
-              </ht>
-            </h2>
-
-            <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="politic.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Politic
-              </ht>
-            </a>
-          </header>
-
-          <section param="content-body">
-          </section>
-    </content:>
-
-  </page>
-</def>
-
-
-<def tag="edit-page" for="Politic">
-  <page merge title="#{ht 'politic.edit.title', :default=>['Edit Politic'] }">
-
-    <body: class="edit-page politic" param/>
-
-    <content:>
-      <section param="content-header">
-        <h2 param="heading">
-          <ht key="politic.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
-            Edit Politic
-          </ht>
-        </h2>
-        <delete-button label="#{ht 'politic.actions.delete', :default=>['Remove This Politic']}" param/>
-      </section>
-
-      <section param="content-body">
-        <form param/>
-      </section>
-    </content:>
-
-  </page>
-</def>
-
-
-
-
-
-<!-- ====== Sport Pages ====== -->
-
-<def tag="index-page" for="Sport">
-  <page merge title="#{ht 'sport.index.title', :default=>[model.model_name.human(:count=>100)] }">
-    <body: class="index-page sport" param/>
-
-    <content: param>
-      <header param="content-header">
-        <h2 param="heading">
-          <ht key="sport.index.heading">
-            <model-name-human model="&model"/>
-          </ht>
-        </h2>
-
-        <p param="count" if>
-          <ht key="sport.collection.count" count="&collection_count">
-            <count summary/>
-          </ht>
-        </p>
-      </header>
-
-      <section param="content-body">
-        <a action="new" to="&model" param="new-link">
-          <ht key="sport.actions.new">New Sport</ht>
-        </a>
-
-        <page-nav param="top-page-nav"/>
-
-        <collection param/>
-
-        <page-nav param="bottom-page-nav"/>
-
-
-      </section>
-    </content:>
-  </page>
-</def>
-
-
-<def tag="new-page" for="Sport">
-  <page merge title="#{ht 'sport.new.title', :default=>[' New Sport'] }">
-    <body: class="new-page sport" param/>
-
-    <content: param>
-      <section param="content-header">
-        <h2 param="heading">
-          <ht key="sport.new.heading">
-            New Sport
-          </ht>
-        </h2>
-      </section>
-
-      <section param="content-body">
-        <form param>
-          <submit: label="#{ht 'sport.actions.create', :default=>['Create Sport']}"/>
-        </form>
-      </section>
-    </content:>
-  </page>
-</def>
-
-
-<def tag="show-page" for="Sport">
-  <page merge title="#{ht 'sport.show.title', :default=>['Sport'] }">
-
-    <body: class="show-page sport" param/>
-
-    <content: param>
-          <header param="content-header">
-            <h2 param="heading">
-              <ht key="sport.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
-                <name/>
-              </ht>
-            </h2>
-
-            <record-flags fields="" param/>
-
-            <a action="edit" if="&can_edit?" param="edit-link">
-              <ht key="sport.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
-                Edit Sport
-              </ht>
-            </a>
-          </header>
-
-          <section param="content-body">
-          </section>
-    </content:>
-
-  </page>
-</def>
-
-
-<def tag="edit-page" for="Sport">
-  <page merge title="#{ht 'sport.edit.title', :default=>['Edit Sport'] }">
-
-    <body: class="edit-page sport" param/>
-
-    <content:>
-      <section param="content-header">
-        <h2 param="heading">
-          <ht key="sport.edit.heading" name="&this.respond_to?(:name) ? this.name : ''">
-            Edit Sport
-          </ht>
-        </h2>
-        <delete-button label="#{ht 'sport.actions.delete', :default=>['Remove This Sport']}" param/>
+        <delete-button label="#{ht 'nfl_team.actions.delete', :default=>['Remove This NFL Team']}" param/>
       </section>
 
       <section param="content-body">

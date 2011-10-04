@@ -1,23 +1,23 @@
 <!-- AUTOMATICALLY GENERATED FILE - DO NOT EDIT -->
 
-<def tag="form" for="Category">
+<def tag="form" for="NflCal">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title" param/>
+    <field-list fields="name, gameday" param/>
     <div param="actions">
-      <submit label="#{ht 'category.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+      <submit label="#{ht 'nfl_cal.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
 
 
 
-<def tag="form" for="Entertainment">
+<def tag="form" for="NflGame">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="title" param/>
+    <field-list fields="name, winner, nfl_cals, nfl_teams" param/>
     <div param="actions">
-      <submit label="#{ht 'entertainment.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
+      <submit label="#{ht 'nfl_game.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>
@@ -27,33 +27,9 @@
 <def tag="form" for="NflTeam">
   <form merge param="default">
     <error-messages param/>
-    <field-list fields="name, url, division, sport" param/>
+    <field-list fields="name, team_url, division" param/>
     <div param="actions">
       <submit label="#{ht 'nfl_team.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
-    </div>
-  </form>
-</def>
-
-
-
-<def tag="form" for="Politic">
-  <form merge param="default">
-    <error-messages param/>
-    <field-list fields="title" param/>
-    <div param="actions">
-      <submit label="#{ht 'politic.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
-    </div>
-  </form>
-</def>
-
-
-
-<def tag="form" for="Sport">
-  <form merge param="default">
-    <error-messages param/>
-    <field-list fields="title" param/>
-    <div param="actions">
-      <submit label="#{ht 'sport.actions.save', :default=>['Save']}" param/><or-cancel param="cancel"/>
     </div>
   </form>
 </def>

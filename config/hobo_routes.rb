@@ -15,14 +15,14 @@ Testme::Application.routes.draw do
   delete 'nfl_teams/:id(.:format)' => 'nfl_teams#destroy', :as => 'destroy_nfl_team', :constraints => { :id => %r([^/.?]+) }
 
 
-  # Resource routes for controller "categories"
-  get 'categories(.:format)' => 'categories#index', :as => 'categories'
-  get 'categories/new(.:format)', :as => 'new_category'
-  get 'categories/:id/edit(.:format)' => 'categories#edit', :as => 'edit_category'
-  get 'categories/:id(.:format)' => 'categories#show', :as => 'category', :constraints => { :id => %r([^/.?]+) }
-  post 'categories(.:format)' => 'categories#create', :as => 'create_category'
-  put 'categories/:id(.:format)' => 'categories#update', :as => 'update_category', :constraints => { :id => %r([^/.?]+) }
-  delete 'categories/:id(.:format)' => 'categories#destroy', :as => 'destroy_category', :constraints => { :id => %r([^/.?]+) }
+  # Resource routes for controller "nfl_cals"
+  get 'nfl_cals(.:format)' => 'nfl_cals#index', :as => 'nfl_cals'
+  get 'nfl_cals/new(.:format)', :as => 'new_nfl_cal'
+  get 'nfl_cals/:id/edit(.:format)' => 'nfl_cals#edit', :as => 'edit_nfl_cal'
+  get 'nfl_cals/:id(.:format)' => 'nfl_cals#show', :as => 'nfl_cal', :constraints => { :id => %r([^/.?]+) }
+  post 'nfl_cals(.:format)' => 'nfl_cals#create', :as => 'create_nfl_cal'
+  put 'nfl_cals/:id(.:format)' => 'nfl_cals#update', :as => 'update_nfl_cal', :constraints => { :id => %r([^/.?]+) }
+  delete 'nfl_cals/:id(.:format)' => 'nfl_cals#destroy', :as => 'destroy_nfl_cal', :constraints => { :id => %r([^/.?]+) }
 
 
   # Lifecycle routes for controller "users"
@@ -47,33 +47,13 @@ Testme::Application.routes.draw do
   match 'forgot_password(.:format)' => 'users#forgot_password', :as => 'user_forgot_password'
 
 
-  # Resource routes for controller "sports"
-  get 'sports(.:format)' => 'sports#index', :as => 'sports'
-  get 'sports/new(.:format)', :as => 'new_sport'
-  get 'sports/:id/edit(.:format)' => 'sports#edit', :as => 'edit_sport'
-  get 'sports/:id(.:format)' => 'sports#show', :as => 'sport', :constraints => { :id => %r([^/.?]+) }
-  post 'sports(.:format)' => 'sports#create', :as => 'create_sport'
-  put 'sports/:id(.:format)' => 'sports#update', :as => 'update_sport', :constraints => { :id => %r([^/.?]+) }
-  delete 'sports/:id(.:format)' => 'sports#destroy', :as => 'destroy_sport', :constraints => { :id => %r([^/.?]+) }
-
-
-  # Resource routes for controller "politics"
-  get 'politics(.:format)' => 'politics#index', :as => 'politics'
-  get 'politics/new(.:format)', :as => 'new_politic'
-  get 'politics/:id/edit(.:format)' => 'politics#edit', :as => 'edit_politic'
-  get 'politics/:id(.:format)' => 'politics#show', :as => 'politic', :constraints => { :id => %r([^/.?]+) }
-  post 'politics(.:format)' => 'politics#create', :as => 'create_politic'
-  put 'politics/:id(.:format)' => 'politics#update', :as => 'update_politic', :constraints => { :id => %r([^/.?]+) }
-  delete 'politics/:id(.:format)' => 'politics#destroy', :as => 'destroy_politic', :constraints => { :id => %r([^/.?]+) }
-
-
-  # Resource routes for controller "entertainments"
-  get 'entertainments(.:format)' => 'entertainments#index', :as => 'entertainments'
-  get 'entertainments/new(.:format)', :as => 'new_entertainment'
-  get 'entertainments/:id/edit(.:format)' => 'entertainments#edit', :as => 'edit_entertainment'
-  get 'entertainments/:id(.:format)' => 'entertainments#show', :as => 'entertainment', :constraints => { :id => %r([^/.?]+) }
-  post 'entertainments(.:format)' => 'entertainments#create', :as => 'create_entertainment'
-  put 'entertainments/:id(.:format)' => 'entertainments#update', :as => 'update_entertainment', :constraints => { :id => %r([^/.?]+) }
-  delete 'entertainments/:id(.:format)' => 'entertainments#destroy', :as => 'destroy_entertainment', :constraints => { :id => %r([^/.?]+) }
+  # Resource routes for controller "nfl_games"
+  get 'nfl_games(.:format)' => 'nfl_games#index', :as => 'nfl_games'
+  get 'nfl_games/new(.:format)', :as => 'new_nfl_game'
+  get 'nfl_games/:id/edit(.:format)' => 'nfl_games#edit', :as => 'edit_nfl_game'
+  get 'nfl_games/:id(.:format)' => 'nfl_games#show', :as => 'nfl_game', :constraints => { :id => %r([^/.?]+) }
+  post 'nfl_games(.:format)' => 'nfl_games#create', :as => 'create_nfl_game'
+  put 'nfl_games/:id(.:format)' => 'nfl_games#update', :as => 'update_nfl_game', :constraints => { :id => %r([^/.?]+) }
+  delete 'nfl_games/:id(.:format)' => 'nfl_games#destroy', :as => 'destroy_nfl_game', :constraints => { :id => %r([^/.?]+) }
 
 end

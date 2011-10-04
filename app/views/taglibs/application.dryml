@@ -8,13 +8,105 @@
 
 <set-theme name="clean"/>
 
-<def tag="main-nav">
-  <navigation class="main-nav" merge-attrs param="default">
-    <nav-item href="#{base_url}/">Home</nav-item>
-    <nav-item with="&Sport"><ht key="sport.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Entertainment"><ht key="entertainment.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <nav-item with="&Politic"><ht key="politic.nav_item" count="100"><model-name-human count="100"/></ht></nav-item>
-    <!-- <nav-item with="&Category"><ht key="category.nav_item" count="100"><model-name-human count="100"/></ht></nav-item> -->
-    <!-- <nav-item with="&NflTeam"><ht key="nfl_team.nav_item" count="100"><model-name-human count="100"/></ht></nav-item> -->
-  </navigation>
+
+<def tag="show-page" for="NflCal">
+  <page merge title="#{ht 'nfl_cal.show.title', :default=>['NFL Gameday'] }">
+
+    <body: class="show-page nfl-cal" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="nfl_cal.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+			<a action="new" to="&model" param="new-link">
+	          <ht key="nfl_cal.actions.new">New NFL Gameday</ht>
+	        </a>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="nfl_cal.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit NFL Gameday
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="gameday" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+
+<def tag="show-page" for="NflGame">
+  <page merge title="#{ht 'nfl_game.show.title', :default=>['NFL Game'] }">
+
+    <body: class="show-page nfl-game" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="nfl_game.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+			<a action="new" to="&model" param="new-link">
+	          <ht key="nfl_game.actions.new">New NFL Game</ht>
+	        </a>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="nfl_game.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit NFL Game
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="winner" param/>
+          </section>
+    </content:>
+
+  </page>
+</def>
+
+
+<def tag="show-page" for="NflTeam">
+  <page merge title="#{ht 'nfl_team.show.title', :default=>['NFL Team'] }">
+
+    <body: class="show-page nfl-team" param/>
+
+    <content: param>
+          <header param="content-header">
+            <h2 param="heading">
+              <ht key="nfl_team.show.heading" name="&this.respond_to?(:name) ? this.name : ''">
+                <name/>
+              </ht>
+            </h2>
+			<a action="new" to="&model" param="new-link">
+	          <ht key="nfl_team.actions.new">New NFL Team</ht>
+	        </a>
+
+            <record-flags fields="" param/>
+
+            <a action="edit" if="&can_edit?" param="edit-link">
+              <ht key="nfl_team.actions.edit" name="&this.respond_to?(:name) ? this.name : ''">
+                Edit NFL Team
+              </ht>
+            </a>
+          </header>
+
+          <section param="content-body">
+            <field-list fields="team_url, division" param/>
+          </section>
+    </content:>
+
+  </page>
 </def>
